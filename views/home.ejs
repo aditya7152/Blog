@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<h2>All Blog Posts</h2>
+<% if (posts.length === 0) { %>
+    <p>No posts yet. <a href="/new">Create one!</a></p>
+<% } else { %>
+    <div class="post-list">
+        <% posts.forEach(function(post) { %>
+            <div class="post-summary">
+                <h3><a href="/posts/<%= post.id %>"><%= post.title %></a></h3>
+            </div>
+        <% }); %>
+    </div>
+<% } %>
+
+<%- include('partials/footer') %>
